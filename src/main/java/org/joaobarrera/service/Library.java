@@ -39,6 +39,10 @@ public class Library {
     }
 
     public void listPatrons() {
+        if (!hasPatrons()) {
+            System.out.println("[Warning] No patrons to display");
+            return;
+        }
         // Header
         System.out.println("\n==============================================================================================================");
         String header = String.format("%-20s %-20s %-50s %-10s", "Patron ID", "Name", "Address", "Overdue Amount");

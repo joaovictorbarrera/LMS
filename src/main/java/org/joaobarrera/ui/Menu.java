@@ -73,11 +73,8 @@ public class Menu {
                 }
                 break;
             case 3:
-                if (!library.hasPatrons()) {
-                    System.out.println("[Warning] No patrons to display");
-                } else {
-                    library.listPatrons();
-                }
+                library.listPatrons();
+
                 break;
             case 4:
                 System.out.println("Exiting...");
@@ -106,13 +103,19 @@ public class Menu {
         sc.nextLine();
 
         Patron patron = new Patron(id, name, address, overdueAmount);
-        if (library.addPatron(patron)) System.out.println("[Success] Patron " + id + " added successfully");
+        if (library.addPatron(patron)) {
+            System.out.println("[Success] Patron " + id + " added successfully");
+            library.listPatrons();
+        }
     }
 
     private void handleRemovePatron(Scanner sc) {
         System.out.println("Please enter the patron's ID:");
         int id = sc.nextInt();
         sc.nextLine();
-        if (library.removePatron(id)) System.out.println("[Success] Patron " + id + " removed successfully");
+        if (library.removePatron(id)) {
+            System.out.println("[Success] Patron " + id + " removed successfully");
+            library.listPatrons();
+        }
     }
 }
