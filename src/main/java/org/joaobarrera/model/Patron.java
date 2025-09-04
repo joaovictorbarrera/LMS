@@ -17,22 +17,6 @@ public class Patron {
         this.overdueAmount = overdueAmount;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public double getOverdueAmount() {
-        return overdueAmount;
-    }
-
     public static boolean isInvalidId(int id) {
         return String.valueOf(id).length() != 7;
     }

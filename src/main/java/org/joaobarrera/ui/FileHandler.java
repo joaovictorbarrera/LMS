@@ -57,7 +57,7 @@ public class FileHandler {
             String[] data = line.split("-");
             lineCount++;
             try {
-                Patron patron = parsePatronLine(data, lineCount);
+                Patron patron = parsePatronLine(data);
                 library.addPatron(patron);
             } catch (Exception e) {
                 System.out.println("[Warning] Error parsing line " + lineCount + ": " + e.getMessage());
@@ -66,7 +66,7 @@ public class FileHandler {
         }
     }
 
-    private static Patron parsePatronLine(String[] data, int lineCount) {
+    private static Patron parsePatronLine(String[] data) {
         if (data.length != 4) {
             throw new IllegalArgumentException("Invalid number of arguments");
         }

@@ -1,10 +1,7 @@
 package org.joaobarrera;
 
 import org.joaobarrera.service.Library;
-import org.joaobarrera.ui.FileHandler;
 import org.joaobarrera.ui.Menu;
-
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
