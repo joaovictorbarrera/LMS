@@ -74,7 +74,6 @@ public class Menu {
                 break;
             case 3:
                 library.listPatrons();
-
                 break;
             case 4:
                 System.out.println("Exiting...");

@@ -76,11 +76,6 @@ public class FileHandler {
         String address = data[2];
         double overdue = Double.parseDouble(data[3]);
 
-        if (Patron.isInvalidId(id)) throw new IllegalArgumentException("Invalid ID. Must be 7 digits");
-        if (Patron.isInvalidName(name)) throw new IllegalArgumentException("Invalid name. Cannot be empty");
-        if (Patron.isInvalidAddress(address)) throw new IllegalArgumentException("Invalid address. Cannot be empty");
-        if (Patron.isInvalidOverdueAmount(overdue)) throw new IllegalArgumentException("Invalid overdue amount. Must be between 0 and 250");
-
         return new Patron(id, name, address, overdue);
     }
 }
